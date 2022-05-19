@@ -1,10 +1,7 @@
-//Code from : https://www.tutorialspoint.com/jfreechart/jfreechart_line_chart.htm
-
+//https://www.tutorialspoint.com/jfreechart/jfreechart_line_chart.htm
 //https://coderslegacy.com/java/jfreechart-scatter-plot/#:~:text=The%20JFreeChart%20Scatter%20Plot%20(a.k.a,line%20segments%20joining%20their%20points.
+
 import org.jfree.chart.ChartPanel;
-
-import java.util.Arrays;
-
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.ui.ApplicationFrame;
@@ -36,13 +33,17 @@ public class LineChart_AWT extends ApplicationFrame
 	      XYSeries y2015 = new XYSeries("2015");
 	      XYSeries y2016 = new XYSeries("2016");
 	      XYSeries y2017 = new XYSeries("2017");
-	      String[] sortedph = new String[20];
+	      XYSeries average = new XYSeries("Average");
+	      double totalPH = 0.0;
+	      double totalTemp = 0.0;
 	      for (int i=0; i<20; i++)
 	      {
-	    	  sortedph[i] = data[i][3];
+	    	  totalPH = totalPH + Double.parseDouble(data[i][3]);
+	    	  totalTemp = totalTemp + Double.parseDouble(data[i][2]);
 	      }
-	      Arrays.sort(sortedph);
-	      
+	      double avePH = totalPH/20;
+	      double aveTemp = totalTemp/20;
+	      average.add(aveTemp,avePH);
 	      for (int row=0; row<20; row++)
 	      {
 	    	if(data[row][1].equals("2014"))
@@ -67,6 +68,7 @@ public class LineChart_AWT extends ApplicationFrame
 	      dataset.addSeries(y2015);
 	      dataset.addSeries(y2016);
 	      dataset.addSeries(y2017);
+	      dataset.addSeries(average);
 	  
 	      return dataset;
 	}
