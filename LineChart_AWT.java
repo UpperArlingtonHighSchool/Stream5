@@ -15,7 +15,8 @@ public class LineChart_AWT extends ApplicationFrame
 {
 
    public LineChart_AWT( String applicationTitle , String chartTitle, String[][]data ) {
-      super(applicationTitle);
+      super(applicationTitle); 
+      //Michael's part of project (JFree Charts)
       JFreeChart scatterPlot = ChartFactory.createScatterPlot(
          chartTitle,
          "Temperature","pH",
@@ -42,6 +43,7 @@ public class LineChart_AWT extends ApplicationFrame
 	    	  totalPH = totalPH + Double.parseDouble(data[i][3]);
 	    	  totalTemp = totalTemp + Double.parseDouble(data[i][2]);
 	      }
+	      //Malachi's part of project (Data person)
 	      double avePH = totalPH/20;
 	      double aveTemp = totalTemp/20;
 	      average.add(aveTemp,avePH);
