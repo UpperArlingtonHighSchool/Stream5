@@ -1,5 +1,6 @@
 //https://www.tutorialspoint.com/jfreechart/jfreechart_line_chart.htm
 //https://coderslegacy.com/java/jfreechart-scatter-plot/#:~:text=The%20JFreeChart%20Scatter%20Plot%20(a.k.a,line%20segments%20joining%20their%20points.
+//Malachi is the data guy
 
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.ChartFactory;
