@@ -8,7 +8,7 @@ import org.jfree.ui.RefineryUtilities;
 
 
 public class runner{ 
-	//Ameen Abubakr part of project
+	//Ameen's part of project (Team Captain)
 	public static void main( String[ ] args ) throws IOException 
 	{
 	      Scanner file = new Scanner(new File("src/AllTheDataCorrected.txt"));
